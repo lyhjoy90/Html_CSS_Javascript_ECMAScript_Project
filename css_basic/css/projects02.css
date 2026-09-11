@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f8f9fa;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* [2단계] 상단 네비게이션 : 페이지 제목이 들어가는 상단 바 */
+.navbar {
+    background-color: #ffffff;
+    height: 80px;
+    display: flex;             /* 1. 배치 모드 활성화 */
+    justify-content: center;   /* 2. 가로 방향 중앙 정렬 */
+    align-items: center;       /* 3. 세로 방향 중앙 정렬 */
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.navbar h1 {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    color: #222;
+}

@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f8f9fa;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+.navbar {
+    background-color: #ffffff;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.navbar h1 {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    color: #222;
+}
+
+/* [3단계] 프로젝트 컨테이너 : 카드들을 감싸는 큰 바구니 */
+.project-container {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}

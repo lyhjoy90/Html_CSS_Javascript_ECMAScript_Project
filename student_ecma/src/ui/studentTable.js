@@ -93,6 +93,7 @@ function createStudentRow(student) {
 
 // 학생 목록을 표에 그린다. 인자를 생략하면 빈 배열로 본다.
 export function renderStudentTable(students = []) {
+    
     // 먼저 비우지 않으면 목록을 새로고침할 때마다 같은 학생이 쌓인다.
     studentTableBody.innerHTML = "";
 

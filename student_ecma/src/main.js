@@ -15,10 +15,24 @@ import {
 import { validateStudent } from "./lib/validation.js";
 import { showError, showSuccess, clearMessages, setLoading } from "./ui/message.js";
 import { renderStudentTable, renderTableError, studentTableBody, } from "./ui/studentTable.js";
-
+import { APP_MODE } from "./config.js";
 
 // 현재 수정 중인 학생 ID
 let editingStudentId = null;
+
+/* ── 모드 표시 ──────────────────────────────────────────── */
+ 
+// 제목 옆에 TEST 또는 PROD 를 적는다.
+// 값은 .env 파일에서 오고, Vite 가 빌드할 때 넣어 준다.
+const appModeBadge = document.getElementById("appMode");
+appModeBadge.textContent = APP_MODE;
+ 
+// 모드에 따라 색을 다르게 한다. classList.add 로 클래스를 하나 더 붙인다.
+if (APP_MODE === "PROD") {
+    appModeBadge.classList.add("prod");
+} else {
+    appModeBadge.classList.add("test");
+}
 
 
 // 폼 제출 이벤트 핸들러
@@ -152,37 +166,6 @@ async function removeStudent(studentId) {
     }
 }
 
-// 학생 삭제 — confirm 은 화면 처리이므로 그대로 남는다
-// async function removeStudent(studentId) {
-//     if (!confirm("정말로 이 학생을 삭제하시겠습니까?")) {
-//         return;
-//     }
-
-//     try {
-//         await deleteStudent(studentId);
-
-//         showSuccess("학생이 성공적으로 삭제되었습니다.");
-//         loadStudents();
-//     } catch (error) {
-//         console.error("Error:", error);
-//         showError(error.message);
-//     }
-// }
-
-// // 바꾼 뒤 — 폼 다루기는 studentForm.js 에 맡긴다
-// async function editStudent(studentId) {
-//     try {
-//         const student = await fetchStudent(studentId);
- 
-//         fillForm(student);
-//         editingStudentId = studentId;
-//         setEditMode(true);
-//         scrollToForm();
-//     } catch (error) {
-//         console.error("Error:", error);
-//         showError(error.message);
-//     }
-// }
 
 // Student load 함수 호출
 loadStudents();

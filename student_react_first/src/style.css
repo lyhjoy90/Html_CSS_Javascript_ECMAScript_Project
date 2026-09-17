@@ -1,4 +1,4 @@
- /* body 태그에 전체 페이지의 기본 스타일을 설정합니다 */
+      /* body 태그에 전체 페이지의 기본 스타일을 설정합니다 */
       body {
           font-family: Arial, sans-serif;
           /* 폰트를 Arial로 설정, Arial이 없으면 sans-serif 사용 */
@@ -243,7 +243,7 @@
           /* 상대적으로 작은 폰트 크기 */
           margin-top: 5px;
           /* 위쪽 여백 */
-          display: none;
+          /* display: none; */
           /* 기본적으로 숨김 */
       }
 
